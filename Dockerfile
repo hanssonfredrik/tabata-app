@@ -8,3 +8,7 @@ COPY package.json /tabata-app/
 RUN npm install
 
 CMD ["npm", "start"]
+
+EXPOSE 3000
+
+ENTRYPOINT ["node", "./app.js"]
