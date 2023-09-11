@@ -1,0 +1,185 @@
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+#main {
+  height: 100%;
+}
+
+#appbar {
+  background-color: #000;
+}
+
+#startup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 70%;
+}
+
+#timer {
+  height: 100%;
+  margin-left: -16px;
+  margin-right: -16px;
+  color: #fff;
+  margin-top: -10px;
+}
+
+.timer-preparing {
+  background-color: #f7b237;  
+}
+
+.timer-working {
+  background-color: #67bb8d;
+}
+
+.timer-resting {
+  background-color: #e94855;
+}
+
+.timer-resetting {
+  background-color: #f7b237;
+}
+
+
+#work-status {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 10px;
+}
+
+#timer-header {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+
+#timer-header .box {
+  width: 40%;
+  background-color:rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+#timer-header .box-header {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+#timer-header .box-state {
+  font-size: 1.1em;
+  margin-top: 5px;
+}
+
+.timer-state-label {
+  font-size: 0.5em;
+}
+
+#timer-content {
+  display: flex;
+  justify-content: center;
+}
+
+#timer-content .inner-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#timer-content .inner-content h1 {
+  margin-top: 20px;
+}
+
+#timer-content .timer-buttons {
+  margin-top: 10px;
+}
+
+#timer-content .timer-buttons .reset-button {
+  margin-left: 40px;
+}
+
+#timer-content .timer-buttons .skip-button {
+  margin-left: 40px;
+}
+
+#timer-content .timer-links {
+  margin-top: 20px;
+}
+
+#timer-content .timer-links a {
+  color: #fff;
+}
+
+/* Animated circle */
+.base-timer {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.base-timer__svg {
+  transform: scaleX(-1);
+}
+
+.base-timer__circle {
+  fill: none;
+  stroke: none;
+}
+
+.base-timer__path-elapsed {
+  stroke-width: 5px;
+  stroke: rgba(0, 0, 0, 0.1);
+}
+
+.base-timer__path-remaining {
+  stroke-width: 5px;
+  stroke-linecap: round;
+  transform: rotate(90deg);
+  transform-origin: center;
+  transition: 1s linear all;
+  fill-rule: nonzero;
+  stroke: currentColor;
+}
+
+.base-timer__path-remaining.green {
+  color: rgba(0, 0, 0, 0.1);;
+}
+
+.base-timer__path-remaining.orange {
+  color: white;
+}
+
+.base-timer__path-remaining.red {
+  color: red;
+}
+
+.base-timer__label {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  flex-direction: column;
+}
