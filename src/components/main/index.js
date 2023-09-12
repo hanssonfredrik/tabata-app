@@ -50,7 +50,7 @@ export default function Main() {
         <Toolbar>
           <img src={LogoImage} alt="Logo" className={classes.logo} />
           <Typography variant="h6" className={classes.title}>
-            Maries tabata timer
+            Tabata timer
           </Typography>
           <div>
             <IconButton
