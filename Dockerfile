@@ -9,6 +9,4 @@ RUN npm install
 
 CMD ["npm", "start"]
 
-EXPOSE 3000
-
-ENTRYPOINT ["node", "./app.js"]
+# ENTRYPOINT ["node", "./app.js"]
