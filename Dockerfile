@@ -23,3 +23,17 @@ RUN npm run build
 EXPOSE 80
 
 CMD ["serve", "-s", "build", "-l", "80"]
+
+# -------------------------
+# Works on Docker locally
+# -------------------------
+# FROM node:18-alpine
+# WORKDIR /tabata-app/
+
+# COPY public/ /tabata-app/public
+# COPY src/ /tabata-app/src
+# COPY package.json /tabata-app/
+
+# RUN npm install
+
+# CMD ["npm", "start"]
