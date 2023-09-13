@@ -1,14 +1,25 @@
-FROM node:18-alpine
-WORKDIR /tabata-app/
+FROM node:16.15.1
 
-COPY public/ /tabata-app/public
-COPY src/ /tabata-app/src
-COPY package.json /tabata-app/
-
+# for caching optimisations
+COPY package*.json /
 RUN npm install
+# required to serve the react app on the live server
+RUN npm install -g serve
 
-# EXPOSE 3000
+COPY . /app
+WORKDIR /app
 
-CMD ["npm", "start"]
+# noop files for non python projects and local development
+RUN echo "#!/bin/bash" > /app/migrate.sh && chmod +x /app/migrate.sh
+RUN echo "#!/bin/bash" > /usr/local/bin/start && chmod +x /usr/local/bin/start
 
-# ENTRYPOINT ["node", "./app.js"]
+ENV PATH=/node_modules/.bin:$PATH
+ENV PORT=80
+ENV HOST=0.0.0.0
+ENV BROWSER='none'
+
+RUN npm run build
+
+EXPOSE 80
+
+CMD ["serve", "-s", "build", "-l", "80"]
